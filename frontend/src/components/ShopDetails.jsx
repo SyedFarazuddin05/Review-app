@@ -15,7 +15,9 @@ export default function ShopDetails() {
   const [reviews, setReviews] = useState([]);
   const [avgRating, setAvgRating] = useState(0);
   const getReviews = async () => {
-    const { data } = await axios.get(`http://localhost:4000/getReviews/${id}`);
+    const { data } = await axios.get(
+      `https://review-app-vlwi.onrender.com/getReviews/${id}`
+    );
     console.log(data);
     setReviews(data);
   };

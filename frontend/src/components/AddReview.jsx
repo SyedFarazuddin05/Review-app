@@ -12,12 +12,15 @@ export default function AddReview({ setOpen, postId, setReviews, getReviews }) {
   const postReview = async () => {
     const user = localStorage.getItem("User");
     console.log(user);
-    const { data } = await axios.post(`http://localhost:4000/add-review`, {
-      rating,
-      description,
-      postId,
-      userName: user,
-    });
+    const { data } = await axios.post(
+      `https://review-app-vlwi.onrender.com/add-review`,
+      {
+        rating,
+        description,
+        postId,
+        userName: user,
+      }
+    );
     console.log(data);
     setOpen(false);
     getReviews();

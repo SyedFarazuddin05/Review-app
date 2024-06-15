@@ -13,10 +13,13 @@ function Login() {
       setError("All fields are required");
       return;
     }
-    const { data } = await axios.post("http://localhost:4000/login", {
-      email,
-      password,
-    });
+    const { data } = await axios.post(
+      "https://review-app-vlwi.onrender.com/login",
+      {
+        email,
+        password,
+      }
+    );
     console.log(data);
     if (data.success) {
       localStorage.setItem("token", data.token);

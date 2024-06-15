@@ -15,10 +15,13 @@ function Register() {
       setError("Password and confirm password doesn't match");
       return;
     }
-    const { data } = await axios.post("http://localhost:4000/register", {
-      email,
-      password,
-    });
+    const { data } = await axios.post(
+      "https://review-app-vlwi.onrender.com/register",
+      {
+        email,
+        password,
+      }
+    );
     if (data.success) {
       setError("");
       setSuccess(data.message);
